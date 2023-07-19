@@ -1,9 +1,13 @@
 import MainBG from "../../components/MainBG/MainBG.jsx";
+import Services from "../Services/Services.jsx"
 
 function Main() {
   return (
     <>
-      <MainBG />
+      <main>
+        <MainBG />
+        <Services />
+      </main>
     </>
   );
 }

@@ -4,51 +4,51 @@ import style from "./mainbg.module.scss";
 function MainBG() {
   return (
     <>
-      <main>
-        <div className={style.background}>
-          <div className={style.container}>
-            <h1 className={style.h1}>perhin & partners</h1>
-            <h2 className={style.h2}>детективное агентство в москве</h2>
-            <form className={style.form}>
-              <input
-                className={style.name}
-                type="text"
-                placeholder="Как к вам обращаться?"
-                name="name"
-              ></input>
+      {/* <main> */}
+      <div className={style.background}>
+        <div className={style.container}>
+          <h1 className={style.h1}>perhin & partners</h1>
+          <h2 className={style.h2}>детективное агентство в москве</h2>
+          <form className={style.form}>
+            <input
+              className={style.name}
+              type="text"
+              placeholder="Как к вам обращаться?"
+              name="name"
+            ></input>
 
-              <input
-                className={style.number}
-                type="number"
-                placeholder="Номер телефона"
-                name="number"
-              ></input>
+            <input
+              className={style.number}
+              type="number"
+              placeholder="Номер телефона"
+              name="number"
+            ></input>
 
-              <input
-                className={style.question}
-                type="aria-text"
-                placeholder="Какой вопрос вас беспокоит?"
-                name="question"
-              ></input>
+            <input
+              className={style.question}
+              type="aria-text"
+              placeholder="Какой вопрос вас беспокоит?"
+              name="question"
+            ></input>
 
-              <button type="submit" className={style.button}>
-                Оставить заявку
-                <div className={style.vector}>
-                  <Vectorright />
-                </div>
-              </button>
-            </form>
-          </div>
-          <div className={style.button_mobile}>
             <button type="submit" className={style.button}>
               Оставить заявку
               <div className={style.vector}>
                 <Vectorright />
               </div>
             </button>
-          </div>
+          </form>
+        </div>
+        <div className={style.button_mobile}>
+          <button type="submit" className={style.button}>
+            Оставить заявку
+            <div className={style.vector}>
+              <Vectorright />
+            </div>
+          </button>
+        </div>
 
-          {/* <form onSubmit={handleSubmit(onSubmit)}>
+        {/* <form onSubmit={handleSubmit(onSubmit)}>
             { <span>
               <Input
                 {...register("phone")}
@@ -74,8 +74,8 @@ function MainBG() {
               </button>
             </div>
           </form> */}
-        </div>
-      </main>
+      </div>
+      {/* </main> */}
     </>
   );
 }
