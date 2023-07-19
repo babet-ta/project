@@ -1,11 +1,13 @@
 import MainBG from "../../components/MainBG/MainBG.jsx";
-import Slider from "../../components/Slider/Slider.jsx";
+import Services from "../Services/Services.jsx"
 
 function Main() {
   return (
     <>
-      <MainBG />
-      <Slider />
+      <main>
+        <MainBG />
+        <Services />
+      </main>
     </>
   );
 }
