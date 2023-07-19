@@ -6,14 +6,10 @@
   padding: 40px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-  background: var(
-    --gradient-white-10,
-    linear-gradient(
-      313deg,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(255, 255, 255, 0) 100%
-    )
-  );
+  background: var(--gradient-white-10,
+      linear-gradient(313deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 100%));
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -48,8 +44,7 @@
 
   .card_icon {
     opacity: 1;
-    filter: brightness(0%) saturate(100%) invert(14%) sepia(5%) saturate(2898%)
-      hue-rotate(330deg) brightness(95%) contrast(78%);
+    filter: brightness(0%) saturate(100%) invert(14%) sepia(5%) saturate(2898%) hue-rotate(330deg) brightness(95%) contrast(78%);
   }
 
   .card_text {

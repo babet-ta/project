@@ -17,13 +17,13 @@ export default function Services() {
             <li>
               <img src={Person} alt="person"></img>
               Для частных лиц
-            </li>
+            </li >
             <li>
               <img src={Business} alt="small suitcase"></img>
               Для бизнеса
             </li>
-          </ul>
-        </header>
+          </ul >
+        </header >
         <Splide
           options={{
             perPage: 4,
@@ -60,7 +60,7 @@ export default function Services() {
           )}
           {/* </div> */}
         </Splide>
-      </div>
+      </div >
     </>
   );
 }
