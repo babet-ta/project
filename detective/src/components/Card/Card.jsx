@@ -13,7 +13,7 @@ export default function Card(props) {
           <span>Подробнее</span>
           <img
             src="images/biege_arrow_right.svg"
-            alt="Нажмите, чтобы узнать подробнее"
+            alt="Нажмите, чтобы перейти и узать подробнее"
           />
         </div>
       </div>

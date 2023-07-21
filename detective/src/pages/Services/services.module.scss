@@ -1,11 +1,9 @@
 .container {
   width: auto;
   height: 629px;
-  background-image: linear-gradient(
-      360deg,
+  background-image: linear-gradient(360deg,
       rgba(0, 0, 0, 0.8) 0%,
-      rgba(0, 0, 0, 0) 15%
-    ),
+      rgba(0, 0, 0, 0) 15%),
     linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 15%),
     url(../../assets/images/services-bg.png);
   background-repeat: no-repeat;
@@ -28,7 +26,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 40px;
-  margin-bottom: 64px;
+  margin-bottom: 49px;
 
   ul {
     margin: 10px;
@@ -42,17 +40,31 @@
     gap: 40px;
 
     li {
+      box-sizing: border-box;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 16px;
       transition-duration: 0.3s;
       padding-bottom: 9px;
       cursor: pointer;
+      position: relative;
 
       img {
         opacity: 0.4;
         transition-duration: 0.3s;
       }
+    }
+
+    li::after {
+      content: "";
+      background: transparent;
+      border-radius: 15%;
+      position: absolute;
+      bottom: -5px;
+      height: 2px;
+      width: 100%;
+      transition: background 0.3s;
     }
 
     li:hover {
@@ -63,15 +75,20 @@
       }
     }
 
-    .services__person {
-      color: #fff;
-      border-bottom: 1px solid rgba(255, 255, 255);
-      padding-bottom: 9px;
-
-      img {
-        opacity: 1;
-      }
+    li:hover::after {
+      // display: initial;
+      background: white;
     }
+
+    // .services__person {
+    //   color: #fff;
+    //   border-bottom: 1px solid rgba(255, 255, 255);
+    //   padding-bottom: 9px;
+
+    //   img {
+    //     opacity: 1;
+    //   }
+    // }
 
     a {
       text-decoration: none;
@@ -90,8 +107,7 @@
 .custom_splide {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  height: 100%;
+  // gap: 2rem;
   margin: 0;
 }
 
@@ -146,35 +162,43 @@ a {
   0% {
     transform: rotate(0);
   }
+
   to {
     transform: rotate(1turn);
   }
 }
+
 .splide__track--draggable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-.splide__track--fade > .splide__list > .splide__slide {
+
+.splide__track--fade>.splide__list>.splide__slide {
   margin: 0 !important;
   opacity: 0;
   z-index: 0;
 }
-.splide__track--fade > .splide__list > .splide__slide.is-active {
+
+.splide__track--fade>.splide__list>.splide__slide.is-active {
   opacity: 1;
   z-index: 1;
 }
+
 .splide--rtl {
   direction: rtl;
 }
-.splide__track--ttb > .splide__list {
+
+.splide__track--ttb>.splide__list {
   display: block;
 }
+
 .splide__container {
   box-sizing: border-box;
   position: relative;
 }
+
 .splide__list {
   backface-visibility: hidden;
   display: -ms-flexbox;
@@ -183,9 +207,11 @@ a {
   margin: 0;
   padding: 0 !important;
 }
+
 .splide.is-initialized:not(.is-active) .splide__list {
   display: block;
 }
+
 .splide__pagination {
   -ms-flex-align: center;
   align-items: center;
@@ -198,6 +224,7 @@ a {
   margin: 0;
   pointer-events: none;
 }
+
 .splide__pagination li {
   display: inline-block;
   line-height: 1;
@@ -205,20 +232,25 @@ a {
   margin: 0;
   pointer-events: auto;
 }
+
 .splide:not(.is-overflow) .splide__pagination {
   display: none;
 }
+
 .splide__progress__bar {
   width: 0;
 }
+
 .splide {
   position: relative;
   visibility: hidden;
 }
+
 .splide.is-initialized,
 .splide.is-rendered {
   visibility: visible;
 }
+
 .splide__slide {
   backface-visibility: hidden;
   box-sizing: border-box;
@@ -228,9 +260,11 @@ a {
   margin: 0;
   position: relative;
 }
+
 .splide__slide img {
   vertical-align: bottom;
 }
+
 .splide__spinner {
   animation: splide-loading 1s linear infinite;
   border: 2px solid #999;
@@ -247,6 +281,7 @@ a {
   top: 0;
   width: 20px;
 }
+
 .splide__sr {
   clip: rect(0 0 0 0);
   border: 0;
@@ -257,13 +292,16 @@ a {
   position: absolute;
   width: 1px;
 }
+
 .splide__toggle.is-active .splide__toggle__play,
 .splide__toggle__pause {
   display: none;
 }
+
 .splide__toggle.is-active .splide__toggle__pause {
   display: inline;
 }
+
 .splide__track {
   overflow: hidden;
   position: relative;
@@ -292,3 +330,34 @@ a {
 //     overflow: hidden;
 //   }
 // }
+
+@media screen and (max-width: 376px) {
+  .container {
+    padding: 52px 16px;
+  }
+
+  .services__header {
+    font-family: Geologica;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h3 {
+      font-size: 24px;
+    }
+
+    ul {
+      gap: 24px;
+      padding: 0;
+
+      li {
+        gap: 8px;
+      }
+    }
+
+    a button {
+      width: 343px;
+      font-size: 16px;
+    }
+  }
+}

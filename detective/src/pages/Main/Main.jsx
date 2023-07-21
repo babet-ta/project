@@ -3,6 +3,7 @@ import About from "../../pages/About/About.jsx";
 import Director from "../Director/Director.jsx";
 import FirstVisit from "../FirstVisit/FirstVisit.jsx";
 import License from "../License/License.jsx";
+import Reviews from "../Reviews/Reviews.jsx";
 import Safety from "../Safety/Safety.jsx";
 import Services from "../Services/Services.jsx";
 import Youtube from "../Youtube/Youtube.jsx";
@@ -18,6 +19,7 @@ function Main() {
         <Youtube />
         <FirstVisit />
         <Director />
+        <Reviews />
         <Safety />
       </main>
     </>

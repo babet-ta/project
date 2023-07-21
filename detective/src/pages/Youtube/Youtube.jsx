@@ -5,6 +5,7 @@ import "@splidejs/react-splide/css";
 import preview1 from "../../assets/images/video_preview_1.png";
 import preview2 from "../../assets/images/video_preview_2.png";
 import preview3 from "../../assets/images/video_preview_3.png";
+import play from "../../assets/images/play_button.svg"
 
 export default function Youtube() {
   return (
@@ -23,14 +24,21 @@ export default function Youtube() {
       <Splide
         options={{
           perPage: 2,
+          breakpoints: {
+            376: {
+              perPage: 1,
+              height: 171,
+            }
+          },
           perMove: 1,
-          rewind: true,
           autoWidth: true,
-          height: 560,
+          height: 487,
           pagination: false,
           arrows: true,
           type: "loop",
+          gap: 10,
         }}
+        className={`${styles.custom_splide}`}
       >
         <SplideSlide>
           <a
@@ -42,7 +50,9 @@ export default function Youtube() {
               className={`${styles.video}`}
               src={`${preview1}`}
               alt="video"
-            ></img>
+            >
+            </img>
+            <img className={`${styles.play}`} src={`${play}`} alt="play video"></img>
           </a>
         </SplideSlide>
         <SplideSlide>
@@ -56,6 +66,7 @@ export default function Youtube() {
               src={`${preview2}`}
               alt="video"
             ></img>
+            <img className={`${styles.play}`} src={`${play}`} alt="play video"></img>
           </a>
         </SplideSlide>
         <SplideSlide>
@@ -69,6 +80,7 @@ export default function Youtube() {
               src={`${preview3}`}
               alt="video"
             ></img>
+            <img className={`${styles.play}`} src={`${play}`} alt="play video"></img>
           </a>
         </SplideSlide>
       </Splide>

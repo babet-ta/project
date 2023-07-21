@@ -39,14 +39,22 @@ export default function Services() {
         <Splide
           options={{
             perPage: 4,
+            breakpoints: {
+              376: {
+                perPage: 1,
+                height: 475,
+              }
+            },
             perMove: 1,
-            rewind: true,
+            rewind: false,
             autoWidth: true,
-            height: 560,
+            height: 524,
             pagination: false,
             arrows: true,
             type: "loop",
-          }}
+            gap: 24,
+          }
+          }
           className={style.custom_splide}
           // className={style.splide}
           aria-label="My Favorite Images"
