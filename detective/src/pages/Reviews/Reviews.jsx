@@ -33,9 +33,18 @@ export default function Reviews() {
             perPage: 4,
             perMove: 1,
             breakpoints: {
-              376: {
+              1280: {
+                perPage: 3,
+              },
+              744: {
+                perPage: 2,
+                arrows: false,
+              },
+              480: {
                 perPage: 1,
-                height: 475,
+                height: 400,
+                gap: 16,
+                arrows: false,
               }
             },
             rewind: false,
@@ -47,17 +56,8 @@ export default function Reviews() {
             gap: 24,
           }}
           className={styles.custom_splide}
-          // className={style.splide}
           aria-label="Rates"
-          onMoved={(splide, newIndex) => {
-            // // eslint-disable-next-line
-            // console.log("moved", newIndex);
-            // // eslint-disable-next-line
-            // console.log("length", splide.length);
-          }}
         >
-          {/* <div className={style.slider_container}> */}
-          {/* <SplideTrack> */}
           {reviews.map((review) => (
             <SplideSlide
               key={review.id}
@@ -77,8 +77,6 @@ export default function Reviews() {
               ></Review>
             </SplideSlide>
           ))}
-          {/* </div> */}
-          {/* </SplideTrack> */}
         </Splide>
       </div>
     </>

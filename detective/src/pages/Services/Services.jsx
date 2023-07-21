@@ -40,9 +40,18 @@ export default function Services() {
           options={{
             perPage: 4,
             breakpoints: {
-              376: {
+              1280: {
+                perPage: 3,
+              },
+              744: {
+                perPage: 2,
+                arrows: false,
+              },
+              480: {
                 perPage: 1,
                 height: 475,
+                gap: 16,
+                arrows: false,
               }
             },
             perMove: 1,
@@ -56,17 +65,8 @@ export default function Services() {
           }
           }
           className={style.custom_splide}
-          // className={style.splide}
-          aria-label="My Favorite Images"
-          onMoved={(splide, newIndex) => {
-            // eslint-disable-next-line
-            console.log("moved", newIndex);
-            // eslint-disable-next-line
-            console.log("length", splide.length);
-          }}
+          aria-label="Services"
         >
-          {/* <div className={style.slider_container}> */}
-          {/* <SplideTrack> */}
           {cards.map((card) => (
             <SplideSlide
               key={card.id}
@@ -85,8 +85,6 @@ export default function Services() {
               ></Card>
             </SplideSlide>
           ))}
-          {/* </div> */}
-          {/* </SplideTrack> */}
         </Splide>
       </div>
     </>

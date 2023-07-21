@@ -25,9 +25,18 @@ export default function Youtube() {
         options={{
           perPage: 2,
           breakpoints: {
-            376: {
+            1280: {
+              perPage: 3,
+            },
+            744: {
+              perPage: 2,
+              arrows: false,
+            },
+            480: {
               perPage: 1,
-              height: 171,
+              height: 475,
+              gap: 16,
+              arrows: false,
             }
           },
           perMove: 1,
