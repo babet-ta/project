@@ -17,8 +17,10 @@ export default function Youtube() {
           target="_blank"
           rel="noreferrer"
         >
-          Наш блог на YouTube
-          <img src={`${icon}`} alt="YouTube"></img>
+          <span>
+            Наш блог на YouTube
+            <img src={`${icon}`} alt="YouTube"></img>
+          </span>
         </a>
       </header>
       <Splide
@@ -28,14 +30,15 @@ export default function Youtube() {
             1280: {
               perPage: 3,
             },
-            744: {
+            968: {
               perPage: 2,
               arrows: false,
+              gap: 0,
             },
-            480: {
-              perPage: 1,
-              height: 475,
-              gap: 16,
+            500: {
+              perPage: 2,
+              height: 200,
+              gap: 0,
               arrows: false,
             }
           },

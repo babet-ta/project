@@ -15,16 +15,14 @@ export default function Services() {
         <div className={style.services__header}>
           <h3>Услуги</h3>
           <ul>
-            <li className={style.services__person}>
+            <li className={`${style.services__person} ${style.selected}`}>
               <img src={Person} alt="person"></img>
               Для частных лиц
             </li>
-            <Link to="/business">
-              <li>
-                <img src={Business} alt="small suitcase"></img>
-                Для бизнеса
-              </li>
-            </Link>
+            <li className={style.services__person}>
+              <img src={Business} alt="small suitcase"></img>
+              Для бизнеса
+            </li>
           </ul>
           <Link to="/services">
             <button type="submit" className={style.button}>
