@@ -1,0 +1,110 @@
+import React, { useState } from 'react';
+import Review from '../Review-card/Review-card';
+import style from './pagination.module.scss'
+import ArrowLeft from '../../assets/images/white_arrow_left.svg'
+import ArrowRight from '../../assets/images/white_arrow_right.svg'
+import ArrowDown from '../../assets/images/biege_arrow_down.svg'
+
+const Pagination = (props) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [numEachPage, setNumEachPage] = useState(12);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: -1000,
+      behavior: "smooth"
+    });
+  }
+
+  const data = props.array
+
+  const totalPages = Math.ceil(data.length / numEachPage);
+
+  const handleClick = (page) => {
+    scrollToTop();
+    setNumEachPage(12);
+    setCurrentPage(page);
+  };
+
+  const startIndex = (currentPage - 1) * numEachPage;
+  let endIndex = startIndex + numEachPage;
+  const currentCards = data.slice(startIndex, endIndex);
+
+  const liveload = () => {
+    const endNum = numEachPage + 12
+    setNumEachPage(endNum)
+  }
+
+  return (
+    <>
+      <div className={props.wrapper}>
+        {currentCards.map((card, index) => (
+          <Review key={index}
+            isLink={false}
+            review={card.review}
+            name={card.name}
+            stars={card.stars}
+            date={card.date}
+            text={card.text}>
+          </Review>
+        ))}
+      </div>
+      <div className={style.pagination_wrapper}>
+        <button
+          className={currentPage == 6 ? style.button_show_more_disabled : style.button_show_more}
+          onClick={() => liveload()}
+          disabled={currentPage == 6 ? true : false}
+        >
+          Показать еще 12
+          <img src={ArrowDown} alt=""></img>
+        </button>
+        <div className={style.numbers}>
+          {currentPage >= 1 && (
+            <button
+              onClick={() => handleClick(currentPage - 1)}
+              className={currentPage == 1 ? style.arrow_disabled : style.numbers_arrows}
+              disabled={currentPage == 1 ? true : false}
+            >
+              <img src={ArrowLeft} alt="" />
+            </button>
+          )}
+          <span
+            className={currentPage == 1 ? style.selected_page_number : ''}
+            onClick={() => handleClick(1)}
+          >1</span>
+          <span
+            className={currentPage == 2 ? style.selected_page_number : ''}
+            onClick={() => handleClick(2)}
+          >2</span>
+          <span
+            className={currentPage == 3 ? style.selected_page_number : ''}
+            onClick={() => handleClick(3)}
+          >3</span>
+          <span
+            className={currentPage == 4 ? style.selected_page_number : ''}
+            onClick={() => handleClick(4)}
+          >4</span>
+          <span
+            className={currentPage == 5 ? style.selected_page_number : ''}
+            onClick={() => handleClick(5)}
+          >5</span>
+          <span
+            className={currentPage == 6 ? style.selected_page_number : ''}
+            onClick={() => handleClick(6)}
+          >6</span>
+          {currentPage <= totalPages && (
+            <button
+              onClick={() => handleClick(currentPage + 1)}
+              className={currentPage == 6 ? style.arrow_disabled : style.numbers_arrows}
+              disabled={currentPage == 6 ? true : false}
+            >
+              <img src={ArrowRight} alt="" />
+            </button>
+          )}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Pagination;

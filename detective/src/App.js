@@ -8,6 +8,7 @@ import Main from "./pages/Main/Main.jsx";
 import FAQ from "./pages/FAQ/FAQ";
 import Footer from "./components/Footer/Footer";
 import Contacts from "./pages/Contacts/Contacts.jsx";
+import Reviews from "./pages/Reviews/Reviews.jsx";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
 
         <Route exact path="/" element={<Main />} />
         <Route exact path="/form" element={<FAQ />} />
+        <Route exact path="/reviews" element={<Reviews />} />
         <Route exact path="/contacts" element={<Contacts />} />
       </Routes>
       <Footer />

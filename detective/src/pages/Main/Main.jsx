@@ -6,7 +6,7 @@ import FAQ from "../FAQ/FAQ.jsx";
 import FirstVisit from "../FirstVisit/FirstVisit.jsx";
 import License from "../License/License.jsx";
 import Map from "../Map/Map.jsx";
-import Reviews from "../Reviews/Reviews.jsx";
+import Reviews from "../../components/Reviews/Reviews.jsx"
 import Safety from "../Safety/Safety.jsx";
 import Services from "../Services/Services.jsx";
 import Youtube from "../Youtube/Youtube.jsx";
