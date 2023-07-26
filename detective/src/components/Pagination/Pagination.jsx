@@ -9,19 +9,12 @@ const Pagination = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [numEachPage, setNumEachPage] = useState(12);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: -1000,
-      behavior: "smooth"
-    });
-  }
-
   const data = props.array
 
   const totalPages = Math.ceil(data.length / numEachPage);
 
   const handleClick = (page) => {
-    scrollToTop();
+    window.scrollTo({ top: 0 })
     setNumEachPage(12);
     setCurrentPage(page);
   };
@@ -30,8 +23,9 @@ const Pagination = (props) => {
   let endIndex = startIndex + numEachPage;
   const currentCards = data.slice(startIndex, endIndex);
 
+  let endNum = numEachPage
   const liveload = () => {
-    const endNum = numEachPage + 12
+    endNum = numEachPage + 12
     setNumEachPage(endNum)
   }
 
@@ -45,15 +39,16 @@ const Pagination = (props) => {
             name={card.name}
             stars={card.stars}
             date={card.date}
-            text={card.text}>
+            text={card.text}
+            readmore={card.readmore}>
           </Review>
         ))}
       </div>
       <div className={style.pagination_wrapper}>
         <button
-          className={currentPage == 6 ? style.button_show_more_disabled : style.button_show_more}
+          className={(endNum === data.length) || (currentPage === 6) ? style.button_show_more_disabled : style.button_show_more}
+          disabled={(endNum === data.length) || (currentPage === 6) ? true : false}
           onClick={() => liveload()}
-          disabled={currentPage == 6 ? true : false}
         >
           Показать еще 12
           <img src={ArrowDown} alt=""></img>
@@ -61,42 +56,42 @@ const Pagination = (props) => {
         <div className={style.numbers}>
           {currentPage >= 1 && (
             <button
+              disabled={currentPage === 1 ? true : false}
+              className={currentPage === 1 ? style.arrow_disabled : style.numbers_arrows}
               onClick={() => handleClick(currentPage - 1)}
-              className={currentPage == 1 ? style.arrow_disabled : style.numbers_arrows}
-              disabled={currentPage == 1 ? true : false}
             >
               <img src={ArrowLeft} alt="" />
             </button>
           )}
           <span
-            className={currentPage == 1 ? style.selected_page_number : ''}
+            className={currentPage === 1 ? style.selected_page_number : ''}
             onClick={() => handleClick(1)}
           >1</span>
           <span
-            className={currentPage == 2 ? style.selected_page_number : ''}
+            className={currentPage === 2 ? style.selected_page_number : ''}
             onClick={() => handleClick(2)}
           >2</span>
           <span
-            className={currentPage == 3 ? style.selected_page_number : ''}
+            className={currentPage === 3 ? style.selected_page_number : ''}
             onClick={() => handleClick(3)}
           >3</span>
           <span
-            className={currentPage == 4 ? style.selected_page_number : ''}
+            className={currentPage === 4 ? style.selected_page_number : ''}
             onClick={() => handleClick(4)}
           >4</span>
           <span
-            className={currentPage == 5 ? style.selected_page_number : ''}
+            className={currentPage === 5 ? style.selected_page_number : ''}
             onClick={() => handleClick(5)}
           >5</span>
           <span
-            className={currentPage == 6 ? style.selected_page_number : ''}
+            className={currentPage === 6 ? style.selected_page_number : ''}
             onClick={() => handleClick(6)}
           >6</span>
           {currentPage <= totalPages && (
             <button
               onClick={() => handleClick(currentPage + 1)}
-              className={currentPage == 6 ? style.arrow_disabled : style.numbers_arrows}
-              disabled={currentPage == 6 ? true : false}
+              className={currentPage === 6 ? style.arrow_disabled : style.numbers_arrows}
+              disabled={currentPage === 6 ? true : false}
             >
               <img src={ArrowRight} alt="" />
             </button>

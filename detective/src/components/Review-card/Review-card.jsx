@@ -21,8 +21,8 @@ export default function Review(props) {
     }
   }
 
-  if (props.isLink == true) {
 
+  if (props.isLink === true) {
     return (
       <>
         <Link to="/reviews">
@@ -34,6 +34,7 @@ export default function Review(props) {
             <p className={`${style.review_name}`}>{props.name}</p>
             <p className={`${style.review_date}`}>{props.date}</p>
             <p className={`${style.review_text}`}>{props.text}</p>
+            {props.readmore && <span className={style.review_link}>Читать целиком</span>}
           </div>
         </Link>
       </>
@@ -51,7 +52,7 @@ export default function Review(props) {
           <p className={`${style.review_name}`}>{props.name}</p>
           <p className={`${style.review_date}`}>{props.date}</p>
           <p className={`${style.review_text}`}>{props.text}</p>
-          <span className={style.review_link}>Читать целиком</span>
+          {props.readmore && <span className={style.review_link}>Читать целиком</span>}
         </div>
       </a>
     )

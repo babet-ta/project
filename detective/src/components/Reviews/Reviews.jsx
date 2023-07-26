@@ -84,6 +84,7 @@ export default function Reviews() {
                 stars={review.stars}
                 date={review.date}
                 text={review.text}
+                readmore={review.readmore}
               ></Review>
             </SplideSlide>
           ))}
