@@ -1,8 +1,8 @@
-import style from "./review.module.scss";
+import style from "./reviews.module.scss";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import Review from "../ReviewCard/ReviewCard";
-import reviews from "./review-array";
+import reviews from "./reviews-array";
 
 export default function Reviews() {
   return (
@@ -84,7 +84,6 @@ export default function Reviews() {
                 stars={review.stars}
                 date={review.date}
                 text={review.text}
-                readmore={review.readmore}
               ></Review>
             </SplideSlide>
           ))}

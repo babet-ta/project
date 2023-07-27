@@ -6,10 +6,10 @@ import FAQ from "../FAQ/FAQ.jsx";
 import FirstVisit from "../FirstVisit/FirstVisit.jsx";
 import License from "../License/License.jsx";
 import Map from "../Map/Map.jsx";
-import Review from "../../components/Review/Review.jsx";
 import Safety from "../Safety/Safety.jsx";
 import Services from "../Services/Services.jsx";
 import Youtube from "../Youtube/Youtube.jsx";
+import Reviews from "../../components/Reviews/Reviews.jsx";
 
 function Main() {
   return (
@@ -22,7 +22,7 @@ function Main() {
         <Youtube />
         <FirstVisit />
         <Director />
-        <Review />
+        <Reviews />
         <Safety />
         <FAQ />
         <Blog />

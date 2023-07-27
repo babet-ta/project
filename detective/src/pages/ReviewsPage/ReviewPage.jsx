@@ -1,5 +1,5 @@
 import style from "./reviews.module.scss";
-import reviews from "../../components/Review/review-array";
+import reviews from "../../components/Reviews/reviews-array";
 import Pagination from "../../components/Pagination/Pagination";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.jsx";
 
