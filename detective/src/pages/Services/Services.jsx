@@ -33,7 +33,6 @@ export default function Services() {
             </button>
           </Link>
         </div>
-
         <Splide
           options={{
             perPage: 4,
@@ -84,7 +83,7 @@ export default function Services() {
             </SplideSlide>
           ))}
         </Splide>
-      </div>
+      </div >
     </>
   );
 }

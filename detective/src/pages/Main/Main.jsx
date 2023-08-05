@@ -23,7 +23,6 @@ function Main() {
         <Reviews />
         <Safety />
         <Blog />
-      </main>
     </>
   );
 }
